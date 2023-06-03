@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>QR CODE APP</title>
+            <style>
+                        *{
+                                    margin: 0;
+                                    padding: 0;
+                                    box-sizing: border-box;
+                                    font-family: sans-serif;
+                                    background-color:bisque;
+                        }
+                        h1{
+                                    font-size: 2em;
+                                    font-weight: bold;
+                                    text-align: center;
+                                    color:red;
+                                    margin-bottom:15px;
+                                    margin-top:50px;
+                        }
+                        main{
+                                    width: 100%;
+                                    max-width:600px;
+                                    margin:0 auto;
+                        }
+                        input{
+                                     width: 100%;
+                                     height: 100%;
+                                     border: 1px solid black;
+                                     border-radius: 30px;
+                                     padding:10px;
+                        }
+                        button{
+                                    width:100%;
+                                    max-width:200px;
+                                    border: 1px solid #ccc;
+                                    border-radius: 30px;
+                                    padding:10px;
+                                    background-color: #646464;
+                                    color: white;
+                                    text-align:center;
+                                    margin-top:15px;
+                                    margin-left:200px;
+                        }
+                        button:hover{
+                                    background-color: white;
+                                    color:black;
+                                    cursor:pointer;
+                        }
+                        .qr_img{
+                                    width: 100%;
+                                    max-width:320px;
+                                    margin:15px auto;
+                        }
+                        .qr_img img{
+                                    width: 100%;
+                        }
+            </style>
+</head>
+<body>
+            <main>
+                        <h1>QR CODE APP</h1>
+                        <form method='post'>
+                                    {% csrf_token %}
+                                    <input type='text' name='data' id='data' placeholder='QR Code Oluşturmak için veri girişi yapınız'>
+                                    <button type='submit' class="buttonqr">QR Code Oluştur</button>
+                        </form>
+
+                        <div class='qr_img'>
+                                    {% if img_name %}
+                                                <img src="/media/{{img_name}}" alt="qr_code">
+                                    {% endif %}
+                        </div>
+            </main>
+</body>
+</html>

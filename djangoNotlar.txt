@@ -1,0 +1,13 @@
+pip install virtualenv
+virtualenv venv
+source venv/bin/activate
+
+Yeni proje oluşturma
+django-admin startprojects core .
+
+Uygulama ismi oluşturma
+python3 manage.py startapp qrcodeapp
+
+qrcodeapp içerisindeki
+models.py dosyası veritabanlarının olduğu klasördür
+views.py hangi slaş işsaretinde hangi html dosyası gözüksün 
